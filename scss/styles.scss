@@ -1,0 +1,53 @@
+@import "reset";
+@import "mixin";
+@import "variables";
+
+.container {
+	@include center-absolute
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	input {
+		border: 1px solid black;
+		display: inline-block;
+	}
+	button {
+		margin: 0 auto;
+	}
+	p {
+		margin: 1%;
+	}
+}
+#main-nav {
+	background: $color;
+	ul {
+		width: 100%;
+		@include clearfix;
+	}
+	li {
+		float: left;
+		width: (100% / 6);
+		@include mQ(600px){
+			width: 100%;
+		}
+	}
+	a{
+		text-decoration: none;
+		padding: 16px;
+		display: block;
+		text-align: center;
+		&:hover{
+			background: darken($color, 10);
+		}
+	}
+}
+.grid{
+	@include grid(3,1%)
+	img {
+		width: 100%;
+	}
+}
+
+
+
