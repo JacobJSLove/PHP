@@ -1,0 +1,49 @@
+@import "reset";
+@import "mixin";
+@import "variables";
+
+.container {
+	@include center-absolute
+	text-align: center;
+	width: 30%;
+	input {
+		width: 100%;
+		border: 1px solid black;
+	}
+	button {
+		display: block;
+		margin: 0 auto;
+	}
+}
+#main-nav {
+	background: $color;
+	ul {
+		width: 100%;
+		@include clearfix;
+	}
+	li {
+		float: left;
+		width: (100% / 6);
+		@include mQ(600px){
+			width: 100%;
+		}
+	}
+	a{
+		text-decoration: none;
+		padding: 16px;
+		display: block;
+		text-align: center;
+		&:hover{
+			background: darken($color, 10);
+		}
+	}
+}
+.grid{
+	@include grid(3,1%)
+	img {
+		width: 100%;
+	}
+}
+
+
+
