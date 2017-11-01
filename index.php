@@ -6,48 +6,76 @@
 </head>
 <body>
 	<div class="container">
-		<form>
-			<input type="text" name="num1" placeholder="Number 1">
-			<input type="text" name="num2" placeholder="Number 2">
-			<select name="operator">
-				<option>None</option>
-				<option>Add</option>
-				<option>Subtract</option>
-				<option>Multiply</option>
-				<option>Divide</option>
-			</select>
-			<br>
-			<button type="submit" name="submit" value="submit">Go</button>
-		</form>
-		<p>Answer is:</p>
-		<?php
-		if (isset($_GET['submit'])) {
-			$result1 = $_GET['num1'];
-			$result2 = $_GET['num2'];
-			$operator = $_GET['operator'];
-			if (is_numeric($result1) && is_numeric($result2)) {
-				switch ($operator) {
-					case 'None':
-					echo "Select Method";
-					break;
-					case 'Add':
-					echo $result1 + $result2;
-					break;
-					case 'Subtract':
-					echo $result1 - $result2;
-					break;
-					case 'Multiply':
-					echo $result1 * $result2;
-					break;
-					case 'Divide':
-					echo $result1 / $result2;
-					break;
-				}
-			} else {
-				echo "You need to type a number";
+		<p>Dzisiaj jest:
+			<?php
+			$day = date("w");
+			switch ($day) {
+				case '0':
+				echo "Niedziela!";
+				break;
+				case '1':
+				echo ":Poniedziałek!";
+				break;
+				case '2':
+				echo "Wtorek!";
+				break;
+				case '3':
+				echo "Środa!";
+				break;
+				case '4':
+				echo "Czwartek!";
+				break;
+				case '5':
+				echo "Piątek!";
+				break;
+				case '6':
+				echo "Sobota!";
+				break;
 			}
+			?>
+		</p>
+		<?php
+		$x = 1;
+		// Najpierw sprawdza poźniej wypisuje
+		while ($x <= 2) {
+			echo "X równa się ".$x."<br>";
+			$x++;
 		}
+		echo "<br>";
+
+		$y = 1;
+		// Najpierw zrobi do później sprawdzi czy się zgadza
+		do {
+			echo "Y równa się ".$y."<br>";
+			$y++;
+		}
+		while ($y <= 3 );
+
+		echo "<br>";
+
+		$arr = array("Kuba", "Jan", "Maciek");
+
+		for ($c=0; $c < count($arr); $c++) { 
+			echo "Imie to {$arr[$c]}</br>";
+		}
+
+		echo "<br>";
+		// Jeśli nie znamy długości i nie chcemy nieskończoności
+		foreach ($arr as $key) {
+			echo "My name is {$key} </br>";
+		}
+
+		echo "<br>";
+		$c = 2;
+		function fun($a)
+		{
+			$a *= 4;
+			echo "Pomnożone przez 4 </br>c = {$a}";
+		};
+		fun($c);
 		?>
+
+
 	</div>
 </body>
 <link rel="stylesheet" href="css/style.css">

@@ -1,7 +1,9 @@
 @import "reset";
 @import "mixin";
 @import "variables";
-
+p {
+	font-size: 60px;
+}
 .container {
 	@include center-absolute
 	text-align: center;

@@ -15,6 +15,9 @@ fieldset, img {
 li {
   list-style: none; }
 
+p {
+  font-size: 60px; }
+
 .container {
   position: absolute;
   top: 50%;
